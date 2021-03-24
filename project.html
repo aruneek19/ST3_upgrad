@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UpGrad</title>
+
+    <style>
+     body{
+        background-color: #b3b3ff;
+     }
+     .b1{
+        background-color: lightyellow;
+        height: 40px;
+        width: 105px;
+     }
+
+     #t1{
+        margin: 20px;
+        border-top: solid black;
+        border-bottom: solid black;
+        border-right: solid black;
+        border-left: solid black;
+     }
+#show th, #show td{
+    padding: 13px;
+}
+    </style>
+</head>
+<body>
+    
+         <center>
+            <table id="t1">
+
+                <tr>
+         <td><h4 style="text-align:center;text-decoration: underline;">Details Forms</h4></td>
+                 </tr>
+                  
+                  <tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+                  <tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+
+
+                  <tr>
+            <td> Name :  <input type="text" class="form-control" id="fname" required></td>
+             </tr>
+                 
+                 <tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+
+             <tr>
+            <td>Mob.No :
+              <input type="tel" class="form-control" id="lname" required  pattern="[0-9]{10}"/></td>
+             </tr>
+
+            <tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+
+              <tr>
+            <td>Email :
+      <input type="email" class="form-control" id="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"/></td>
+         </tr>
+
+             <tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+
+           <tr>
+      <td><center><button class="b1" onclick="AddRow()">SUBMIT</button></center></td>
+            </tr>
+           
+           <tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+
+
+            </table>
+
+            <table id="show">
+                <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Mob No.</th>
+                    <th>Email ID</th>
+                </tr>
+            </thead>
+            </table>            
+  </center>
+  
+  <script>
+    var list1 = [];
+        var list2 = [];
+        var list3 = [];
+
+        var n = 1;
+        var x = 0;
+
+        function AddRow(){
+
+            var AddRown = document.getElementById('show');
+            var NewRow = AddRown.insertRow(n);
+
+            list1[x] = document.getElementById("fname").value;
+            list2[x] = document.getElementById("lname").value;
+            list3[x] = document.getElementById("email").value;
+
+            var cel1 = NewRow.insertCell(0);
+            var cel2 = NewRow.insertCell(1);
+            var cel3 = NewRow.insertCell(2);
+
+            cel1.innerHTML = list1[x];
+            cel2.innerHTML = list2[x];
+            cel3.innerHTML = list3[x];
+
+            n++;
+            x++;
+        }
+  </script>
+</body>
+</html>
